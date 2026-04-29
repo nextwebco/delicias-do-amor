@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delícias do Amor - Portfólio</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #fff1dc, #ffe0b2);
+  color: #331616;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 170, 0, 0.25), transparent 70%);
+  top: -100px;
+  left: -100px;
+  z-index: 0;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(214, 40, 40, 0.25), transparent 70%);
+  bottom: -100px;
+  right: -100px;
+  z-index: 0;
+}
+.page {
+  position: relative;
+  z-index: 1;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 45px;
+  page-break-after: always;
+  position: relative;
+  overflow: hidden;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 2px solid rgba(214, 40, 40, .12);
+  border-radius: 26px;
+  pointer-events: none;
+}
+
+.page::after {
+  content: "Delícias do Amor";
+  position: absolute;
+  right: -70px;
+  bottom: 80px;
+  font-size: 70px;
+  font-weight: 800;
+  color: rgba(214, 40, 40, .05);
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+
+/* CAPA */
+.capa {
+  background:
+    linear-gradient(135deg, rgba(120,0,0,.85), rgba(20,0,0,.65)),
+    url("foto2.jpeg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.capa::before {
+  border: 3px solid rgba(255, 210, 63, .65);
+}
+
+.capa-box {
+  max-width: 900px;
+  padding: 55px;
+  border-radius: 34px;
+  background: rgba(0,0,0,.42);
+  backdrop-filter: blur(4px);
+  border: 3px solid #ffd23f;
+  box-shadow: 0 25px 60px rgba(0,0,0,.35);
+}
+
+.badge {
+  display: inline-block;
+  background: #ffd23f;
+  color: #7a0000;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.capa h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 76px;
+  line-height: 1;
+  color: #ffd23f;
+  text-shadow: 4px 4px 0 #8b0000;
+  margin-bottom: 18px;
+}
+
+.capa h3 {
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.capa-info {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.capa-info span {
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.25);
+  padding: 12px 18px;
+  border-radius: 16px;
+  font-weight: 600;
+}
+
+/* SEÇÕES */
+section {
+  background: rgba(255,255,255,.92);
+  border-radius: 28px;
+  padding: 36px;
+  margin-bottom: 28px;
+  box-shadow: 0 18px 40px rgba(96, 24, 0, .10);
+  border: 1px solid rgba(214,40,40,.12);
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #d62828, #ff9f1c);
+  color: white;
+  font-size: 26px;
+  box-shadow: 0 10px 20px rgba(214,40,40,.25);
+}
+
+h2 {
+  color: #b80f0f;
+  font-size: 34px;
+  line-height: 1.1;
+}
+
+p {
+  font-size: 17px;
+  margin-bottom: 13px;
+}
+
+strong, .destaque {
+  color: #b80f0f;
+  font-weight: 800;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.card {
+  background: linear-gradient(180deg, #fff8e8, #fff0c9);
+  padding: 24px;
+  border-radius: 22px;
+  border: 1px solid #ffd166;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.7);
+}
+
+.card h3 {
+  color: #b80f0f;
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+/* LISTA BONITA */
+.lista {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  list-style: none;
+  margin-top: 15px;
+}
+
+.lista li {
+  background: #fff4d8;
+  border-left: 6px solid #d62828;
+  padding: 14px 16px;
+  border-radius: 14px;
+  font-weight: 600;
+}
+
+/* GALERIA */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.photo {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 5px solid #ffd23f;
+  box-shadow: 0 15px 30px rgba(0,0,0,.12);
+}
+
+.photo img {
+  width: 100%;
+  height: 285px;
+  object-fit: cover;
+  display: block;
+}
+
+.photo span {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  background: rgba(120,0,0,.85);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* DOCUMENTOS */
+.docs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.doc-card {
+  background: #fff8e8;
+  border-radius: 22px;
+  padding: 16px;
+  border: 2px solid #ffd166;
+  text-align: center;
+}
+
+.doc-card img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  border-radius: 14px;
+}
+
+.doc-card h3 {
+  color: #b80f0f;
+  margin-bottom: 10px;
+}
+
+/* CONTATO */
+.contato {
+  background: linear-gradient(135deg, #b80f0f, #5a0000);
+  color: white;
+  text-align: center;
+  border: none;
+}
+
+.contato h2 {
+  color: #ffd23f;
+  font-size: 42px;
+}
+
+.contato p {
+  font-size: 22px;
+}
+
+.contact-box {
+  display: inline-block;
+  margin-top: 15px;
+  background: #ffd23f;
+  color: #7a0000;
+  padding: 16px 28px;
+  border-radius: 20px;
+  font-size: 28px;
+  font-weight: 900;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .page {
+    padding: 24px;
+  }
+
+  .capa h1 {
+    font-size: 46px;
+  }
+
+  .capa-box {
+    padding: 30px;
+  }
+
+  .cards,
+  .gallery,
+  .docs,
+  .lista {
+    grid-template-columns: 1fr;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+}
+
+/* PDF */
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  body {
+    background: white;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 18mm;
+    page-break-after: always;
+  }
+
+  section {
+    box-shadow: none;
+    page-break-inside: avoid;
+  }
+
+  .capa {
+    height: 297mm;
+  }
+
+  .photo img {
+    height: 230px;
+  }
+
+  .doc-card img {
+    max-height: 450px;
+  }
+  @media print {
+  .page::after {
+    display: none !important;
+  }
+
+  .page {
+    padding: 16mm !important;
+    overflow: hidden !important;
+  }
+
+  section {
+    margin-bottom: 18px !important;
+  }
+
+  .capa h1 {
+    font-size: 62px !important;
+  }
+
+  .capa-box {
+    padding: 45px !important;
+  }
+
+  .photo img {
+    height: 215px !important;
+  }
+
+  .gallery {
+    gap: 16px !important;
+  }
+
+  .docs {
+    gap: 18px !important;
+  }
+
+  .doc-card img {
+    max-height: 430px !important;
+  }
+}
+.video-section {
+  text-align: center;
+}
+
+.video-card {
+  margin-top: 25px;
+  background: linear-gradient(135deg, #fff8e8, #ffe2a8);
+  border: 3px solid #ffd23f;
+  border-radius: 28px;
+  padding: 25px;
+  box-shadow: 0 18px 40px rgba(120, 0, 0, 0.15);
+}
+
+.video-preview {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 5px solid #b80f0f;
+}
+
+.video-preview img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+.play-button {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 95px;
+  height: 95px;
+  background: linear-gradient(135deg, #d62828, #ff9f1c);
+  color: white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 42px;
+  box-shadow: 0 15px 35px rgba(0,0,0,.35);
+}
+
+.video-link {
+  display: inline-block;
+  margin-top: 22px;
+  background: linear-gradient(135deg, #b80f0f, #5a0000);
+  color: #ffd23f;
+  text-decoration: none;
+  padding: 16px 34px;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: 900;
+  border: 2px solid #ffd23f;
+}
+
+@media print {
+  .video-preview img {
+    height: 320px !important;
+  }
+
+  .video-link {
+    color: #ffd23f !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="page capa">
+  <div class="capa-box">
+    <div class="badge">Portfólio Gastronômico</div>
+    <h1>Delícias do Amor</h1>
+    <h3>Tradição, sabor e qualidade em eventos públicos e comunitários</h3>
+
+    <div class="capa-info">
+      <span>Responsável: Keuly Souza Marques</span>
+      <span>+30 anos de experiência</span>
+      <span>(92) 98464-1500</span>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+  <section>
+    <div class="title">
+      <div class="icon">❤️</div>
+      <h2>Apresentação</h2>
+    </div>
+    <p>
+      A <span class="destaque">Delícias do Amor</span> é um empreendimento gastronômico com tradição e experiência consolidada ao longo de mais de <strong>30 anos de atuação</strong> em eventos públicos, culturais e comunitários.
+    </p>
+    <p>
+      Com origem em uma história familiar no ramo alimentício, a barraca iniciou suas atividades quando a responsável tinha 18 anos, dando continuidade a um legado de trabalho, dedicação e compromisso com a qualidade.
+    </p>
+    <p>
+      Atualmente, participa de eventos organizados pela prefeitura, como arraiais, festividades culturais e eventos em praças públicas.
+    </p>
+  </section>
+
+  <section>
+    <div class="title">
+      <div class="icon">⭐</div>
+      <h2>Experiência Profissional</h2>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Mais de 30 anos</h3>
+        <p>Atuação consolidada no ramo alimentício.</p>
+      </div>
+
+      <div class="card">
+        <h3>Eventos Públicos</h3>
+        <p>Participação em arraiais, festas comunitárias e eventos em praças.</p>
+      </div>
+
+      <div class="card">
+        <h3>Atendimento Ágil</h3>
+        <p>Organização para atender grande fluxo de pessoas.</p>
+      </div>
+
+      <div class="card">
+        <h3>Tradição Familiar</h3>
+        <p>História construída com dedicação, trabalho e compromisso.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="page">
+  <section>
+    <div class="title">
+      <div class="icon">🍟</div>
+      <h2>Produtos Oferecidos</h2>
+    </div>
+
+    <p>
+      A barraca oferece um cardápio variado, atendendo diferentes públicos com produtos preparados com atenção à higiene, qualidade e sabor.
+    </p>
+
+    <ul class="lista">
+      <li>Cachorro-quente</li>
+      <li>Batata frita</li>
+      <li>Morango do amor</li>
+      <li>Morango com chocolate</li>
+      <li>Maçã caramelizada</li>
+      <li>Refrigerantes</li>
+      <li>Produtos variados por evento</li>
+      <li>Cardápio adaptável</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="title">
+      <div class="icon">🏆</div>
+      <h2>Diferenciais</h2>
+    </div>
+
+    <div class="cards">
+      <div class="card"><h3>Qualidade</h3><p>Produtos preparados com cuidado e atenção.</p></div>
+      <div class="card"><h3>Higiene</h3><p>Compromisso com boas práticas no preparo.</p></div>
+      <div class="card"><h3>Variedade</h3><p>Opções para diferentes públicos e eventos.</p></div>
+      <div class="card"><h3>Compromisso</h3><p>Foco na satisfação dos clientes e organizadores.</p></div>
+    </div>
+  </section>
+</div>
+
+<div class="page">
+  <section>
+    <div class="title">
+      <div class="icon">📸</div>
+      <h2>Galeria da Barraca</h2>
+    </div>
+
+    <div class="gallery">
+      <div class="photo"><img src="foto1.jpg"><span>Estrutura da barraca</span></div>
+      <div class="photo"><img src="foto2.jpeg"><span>Atuação em evento</span></div>
+      <div class="photo"><img src="foto3.jpeg"><span>Preparo dos produtos</span></div>
+      <div class="photo"><img src="foto4.jpg"><span>Doces e atendimento</span></div>
+    </div>
+  </section>
+</div>
+
+<div class="page">
+  <section>
+    <div class="title">
+      <div class="icon">🍓</div>
+      <h2>Produtos em Destaque</h2>
+    </div>
+
+    <div class="gallery">
+      <div class="photo"><img src="foto5.jpg"><span>Alimentos preparados</span></div>
+      <div class="photo"><img src="foto6.jpg"><span>Maçã do amor</span></div>
+      <div class="photo"><img src="foto4.jpg"><span>Doces no palito</span></div>
+      <div class="photo"><img src="foto3.jpeg"><span>Atendimento ao público</span></div>
+    </div>
+  </section>
+</div>
+
+<div class="page">
+  <section>
+    <div class="title">
+      <div class="icon">🏗️</div>
+      <h2>Estrutura</h2>
+    </div>
+
+    <p>
+      A barraca possui estrutura adequada para funcionamento em eventos, garantindo organização, praticidade e segurança no preparo e na venda dos alimentos.
+    </p>
+
+    <div class="cards">
+      <div class="card"><h3>Organização</h3><p>Espaço preparado para atendimento ao público.</p></div>
+      <div class="card"><h3>Higiene</h3><p>Cuidado no preparo e armazenamento dos alimentos.</p></div>
+      <div class="card"><h3>Praticidade</h3><p>Estrutura eficiente para eventos movimentados.</p></div>
+      <div class="card"><h3>Segurança</h3><p>Funcionamento adequado para ambientes públicos.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="title">
+      <div class="icon">📌</div>
+      <h2>Considerações Finais</h2>
+    </div>
+
+    <p>
+      A <strong>Delícias do Amor</strong> está preparada para contribuir com a qualidade dos eventos públicos, oferecendo alimentos saborosos, atendimento eficiente e uma experiência positiva ao público.
+    </p>
+
+    <p>
+      Com trajetória sólida e compromisso com o trabalho, a barraca se coloca à disposição para participação em eventos promovidos pela prefeitura e demais organizações.
+    </p>
+  </section>
+</div>
+<div class="page">
+  <section class="video-section">
+    <div class="title">
+      <div class="icon">🎥</div>
+      <h2>Vídeo da Barraca</h2>
+    </div>
+
+    <p>
+      Confira um registro em vídeo da barraca <strong>Delícias do Amor</strong> em funcionamento,
+      mostrando a estrutura, os produtos e o atendimento ao público durante o evento.
+    </p>
+
+    <div class="video-card">
+      <div class="video-preview">
+        <img src="foto2.jpeg" alt="Vídeo Delícias do Amor">
+        <div class="play-button">▶</div>
+      </div>
+
+      <a class="video-link" href="video1.mp4" target="_blank">
+        Assistir vídeo da barraca
+      </a>
+    </div>
+  </section>
+</div>
+
+<div class="page">
+  <section>
+    <div class="title">
+      <div class="icon">📄</div>
+      <h2>Documentos e Comprovações</h2>
+    </div>
+
+    <div class="docs">
+      <div class="doc-card">
+        <h3>Credencial</h3>
+        <img src="doc1.jpg">
+      </div>
+
+      <div class="doc-card">
+        <h3>Declaração</h3>
+        <img src="doc2.jpg">
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="page">
+  <section>
+    <div class="title">
+      <div class="icon">🎓</div>
+      <h2>Certificação</h2>
+    </div>
+
+    <div class="docs">
+      <div class="doc-card">
+        <h3>Curso de Gastronomia Básica</h3>
+        <img src="certificado1.jpg">
+      </div>
+    </div>
+  </section>
+
+  <section class="contato">
+    <h2>Contato</h2>
+    <p>Delícias do Amor</p>
+    <p>Responsável: Keuly Souza Marques</p>
+    <div class="contact-box">(92) 98464-1500</div>
+  </section>
+</div>
+
+</body>
+</html>
